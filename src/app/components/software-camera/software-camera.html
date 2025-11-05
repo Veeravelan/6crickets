@@ -1,0 +1,24 @@
+<div style="font-family:monospace; max-width:420px;">
+    <h2>Camera Coverage Demo</h2>
+    <div>
+        <strong>Desired Subject Distance:</strong>
+        {{desired.subjectDistanceRange.min}} - {{desired.subjectDistanceRange.max}}
+    </div>
+    <div>
+        <strong>Desired Light Level:</strong>
+        {{desired.lightLevelRange.min}} - {{desired.lightLevelRange.max}}
+    </div>
+    <h4>Hardware Cameras:</h4>
+    <ul>
+        <li *ngFor="let cam of cameras">
+            Subject Distance: {{cam.subjectDistanceRange.min}}-{{cam.subjectDistanceRange.max}},
+            Light Level: {{cam.lightLevelRange.min}}-{{cam.lightLevelRange.max}}
+        </li>
+    </ul>
+    <p>
+        <strong>Coverage sufficient?</strong>
+        <span [style.color]="isSufficient ? 'green' : 'red'">
+            {{ isSufficient ? 'YES' : 'NO' }}
+        </span>
+    </p>
+</div>
